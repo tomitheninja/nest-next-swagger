@@ -1,10 +1,15 @@
 import { Configuration, DefaultApi } from "../generated/my-client";
 
-export const myClientApi = new DefaultApi(
-  new Configuration({
-    basePath:
-      process.env.NEXT_PUBLIC_API_URL ??
-      process.env.NEXT_PUBLIC_VERCEL_URL ??
-      `http://localhost:${process.env.PORT ?? "3300"}`,
-  })
-);
+let basePath;
+
+if (process.env.NEXT_PUBLIC_API_URL) {
+  basePath = process.env.NEXT_PUBLIC_API_URL;
+} else if (process.env.PORT) {
+  basePath = `http://localhost:${process.env.PORT}`;
+} else if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+  basePath = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+} else {
+  throw new Error("No API URL found");
+}
+
+export const myClientApi = new DefaultApi(new Configuration({ basePath }));
