@@ -12,4 +12,6 @@ if (process.env.NEXT_PUBLIC_API_URL) {
   throw new Error("No API URL found");
 }
 
+console.log("API URL:", { basePath });
+
 export const myClientApi = new DefaultApi(new Configuration({ basePath }));
