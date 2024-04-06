@@ -1,6 +1,5 @@
 # generated
-/pek-client/*
-
+/generated/*
 
 # compiled output
 /dist

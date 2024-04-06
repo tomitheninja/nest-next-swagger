@@ -5,6 +5,15 @@
   "sourceRoot": "backend/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "tsConfigPath": "backend/tsconfig.build.json"
+    "tsConfigPath": "backend/tsconfig.build.json",
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "classValidatorShim": true,
+          "introspectComments": true
+        }
+      }
+    ]
   }
 }

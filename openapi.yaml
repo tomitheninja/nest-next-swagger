@@ -1,0 +1,33 @@
+openapi: 3.0.0
+paths:
+  /api/v1/ping:
+    get:
+      operationId: AppController_ping
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: string
+  /api/v1/*:
+    get:
+      operationId: AppController_getHello
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: string
+info:
+  title: Nest-Next Example
+  description: ""
+  version: 1.0.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas: {}
