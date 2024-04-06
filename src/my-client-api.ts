@@ -1,6 +1,6 @@
 import { Configuration, DefaultApi } from "../generated/my-client";
 
-let basePath;
+export let basePath: string;
 
 if (process.env.NEXT_PUBLIC_API_URL) {
   basePath = process.env.NEXT_PUBLIC_API_URL;
